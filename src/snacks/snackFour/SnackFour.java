@@ -8,16 +8,20 @@ public class SnackFour {
 
         System.out.println("inserisci una parola");
         String word = scanner.nextLine();
-        String reverseWord = "";
+        String result = "la parola è palindroma";
 
-        for (int i = (word.length()-1); i >= 0; i--){
+        int j = word.length() -1;
+      /*  for (int i = (word.length()-1); i >= 0; i--){
            reverseWord += word.charAt(i);
 
+        }*/
+        for(int i = 0; i < word.length(); i++, j--){
+            if(word.charAt(i) != word.charAt(j)){
+                result = "la parola non è palindroma";
+            }
         }
 
-        String result = word.equals(reverseWord) ? "E' palindroma" : "non è palindroma";
         System.out.println(result);
-
         scanner.close();
     }
 }
